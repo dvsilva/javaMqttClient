@@ -1,5 +1,4 @@
-mosquitto -v>C:\Users\Danyllo\Desktop\log.txt
-
+mosquitto -v > D:\Desenvolvimento\arduino
 
 mosquitto_pub -d -h 52.67.110.105 -p 1883 -t "danyllo/led/meuled" -m "0"
 

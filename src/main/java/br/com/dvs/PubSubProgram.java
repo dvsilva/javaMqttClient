@@ -1,6 +1,6 @@
 package br.com.dvs;
 
-public class Programa {
+public class PubSubProgram {
 
 	public static void main(String[] args) throws InterruptedException {
 		MqttController controller = new MqttController();

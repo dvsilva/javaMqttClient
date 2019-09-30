@@ -9,7 +9,8 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 public class MqttController implements MqttCallback {
 
-	private static String server = "tcp://iot.eclipse.org:1883";
+	//private static String SERVER = "tcp://iot.eclipse.org:1883";
+	private static String SERVER = "tcp://localhost:1883";
 
 	public void publish(String topic, String message){
 		
@@ -17,7 +18,7 @@ public class MqttController implements MqttCallback {
 			String clientId = MqttAsyncClient.generateClientId();
 	       
 			//System.out.println("pub cliid: " + clientId + " - " + topic);
-			MqttClient client = new MqttClient(server, clientId);
+			MqttClient client = new MqttClient(SERVER, clientId);
 	        client.connect();
 	        
 	        MqttMessage mqttMessage = new MqttMessage();
@@ -50,7 +51,7 @@ public class MqttController implements MqttCallback {
 			String clientId = MqttAsyncClient.generateClientId();
 			//System.out.println("sub cliid: " + clientId + " - " + topic);
 			
-			MqttClient client = new MqttClient(server, clientId);
+			MqttClient client = new MqttClient(SERVER, clientId);
 	        client.connect();
 	        client.setCallback(this);
 	        client.subscribe(topic);
